@@ -56,7 +56,6 @@ def lambda_handler(event, context):
 
             s3.upload_file(localpath, bucket, os.path.join(s3_path, key + '.decompressed'))
             s3.delete_object(Bucket=bucket, Key=key)
-            print ("We're getting to the end of the function")
 
         return key
     except Exception as e:
